@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>makikomi-alert</title>
+  <link rel="stylesheet" href="../style/popup.css">
+</head>
+<body class="popup">
+  <header class="l-gird-header">
+    <div class="container__title--extension-title container__wide container__center-aligned">
+      <h1 class="title__extension-title">Makikomi Alert</h1>
+    </div>
+    <div class="container__flex container__center-aligned--flex">
+      <div class="selector__item--section container__center-aligned is-active" is-trigger trigger-for="color-selector" trigger-tag="section">
+        <p>
+          色の設定
+        </p>
+      </div>
+      <div class="selector__item--section container__center-aligned" is-trigger trigger-for="log" trigger-tag="section">
+        <p>
+          ログ
+        </p>
+      </div>
+    </div>
+  </header>
+  <main class="indent__top l-gird-main scroll__auto">
+    <section trigger-target-tag="section__color-selector" class="section-item is-active">
+      <h2 class="title__section-title">色の設定</h2>
+      <ul>
+        <li class="container__color-selector">
+          <div class="color-selector container__flex container__vertical-center-aligned--flex">
+            <h2 class="title__section-item">チェックマーク</h2>
+            <input type="color" class="color-selector__color-preview" data-tag="checkmark-color">
+            <button class="button__flat list__item" reset-data-tag="checkmark-color">リセット</button>
+          </div>
+        </li>
+        <li class="container__color-selector">
+          <div class="color-selector container__flex container__vertical-center-aligned--flex">
+            <h2 class="title__section-item">注意アイコン</h2>
+            <input type="color" class="color-selector__color-preview" data-tag="alertmark-color">
+            <button class="button__flat list__item" reset-data-tag="alertmark-color">リセット</button>
+          </div>
+        </li>
+        <li class="container__color-selector">
+          <div class="color-selector container__flex container__vertical-center-aligned--flex">
+            <h2 class="title__section-item">注意時の枠色</h2> 
+            <input type="color" class="color-selector__color-preview" data-tag="alert-border">
+            <button class="button__flat list__item" reset-data-tag="alert-border">リセット</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section trigger-target-tag="section__log" class="section-item">
+      <h2 class="title__section-title">ログ</h2>
+    </section>
+  </main>
+  <footer class="indent__top l-gird-footer">
+    <div class="container__footer-link container__flex container__right-aligned--flex indent__top-right">
+      <a href="https://twitter.com/ryokohbato" target="_blank" rel="noopener">
+        <img src="../images/twitter_logo.svg" alt="Twitter Logo" class="logo__link list__item">
+      </a>
+      <a href="https://github.com/ryokohbato/makikomi-alert" target="_blank" rel="noopener">
+        <img src="../images/github_logo.svg" alt="GitHub Logo" class="logo__link logo__half-padding list__item">
+      </a>
+    </div>
+  </header>
+  <script src="../script/popup.js"></script>
+</body>
+</html>

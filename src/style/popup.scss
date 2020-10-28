@@ -1,0 +1,192 @@
+@use '../../node_modules/destyle.css/destyle.css';
+@use 'variables/variables__popup' as *;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap&text=MAKIKOMIALERTmakikomialert');
+@font-face {
+  font-family: "HG35";
+  src: url('../images/HackGen35-Regular.ttf');
+}
+
+.popup {
+  background-color: $color__dark;
+  border: 1px solid $color-highlight-pair;
+  color: $color-contrast__dark;
+  font-family: 'HG35', sans-serif;
+  font-size: 12px;
+  height: 300px;
+  width: 280px;
+
+  display: grid;
+  grid-template: 
+    "header" auto
+    "main" 1fr
+    "footer" auto
+    / 1fr;
+}
+
+.l-grid {
+  &-header {
+    grid-area: header;
+  }
+
+  &-main {
+    grid-area: main;
+  }
+
+  &-footer {
+    grid-area: footer;
+  }
+}
+
+.indent {
+  &__top {
+    margin-left: 8px;
+
+    &-right {
+      margin-right: 8px;
+    }
+  }
+}
+
+.container {
+  &__title {
+    &--extension-title {
+      color: $color-highlight;
+    }
+  }
+
+  &__color-selector {
+    margin: 0 0 8px 8px;
+  }
+
+  &__footer-link {
+    margin-bottom: 8px;
+  }
+
+  &__wide {
+    width: 100%;
+  }
+
+  &__center-aligned {
+    text-align: center;
+
+    &--flex {
+      justify-content: center;
+    }
+  }
+
+  &__right-aligned {
+    &--flex {
+      justify-content: flex-end;
+    }
+  }
+
+  &__vertical-center-aligned {
+    &--flex {
+      align-items: center;
+    }
+  }
+
+  &__flex {
+    display: flex;
+  }
+}
+
+
+.section-item {
+  margin: 12px 8px 0 0;
+
+  &:not(.is-active) {
+    display: none;
+  }
+}
+
+.color-selector {
+  &__color-preview {
+    cursor: pointer;
+    height: 32px;
+    width: 51px;
+  }
+}
+
+.selector {
+  &__item {
+    &--section {
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 8px;
+      padding: 6px 2px;
+      width: 50%;
+
+      &.is-active {
+        border-bottom: 1px solid $color-highlight;
+        background-color: rgba($color-highlight-pair, $alpha: 0.2);
+      }
+
+      &:not(.is-active) {
+        border-bottom: 1px solid rgba($color-highlight, $alpha: 0.3);
+
+        &:hover {
+          border-bottom: 1px solid rgba($color-highlight, $alpha: 0.6);
+          background-color: rgba($color-highlight-pair, $alpha: 0.1);
+          transition: all .5s;
+        }
+      }
+    }
+  }
+}
+
+.button {
+  &__flat {
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-left: 8px;
+    padding: 4px 7px 2px;
+
+    &:hover {
+      border: 1px solid rgba($color-highlight, $alpha: 0.6);
+      transition: all .3s;
+    }
+  }
+}
+
+.title {
+  &__extension-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 12px;
+  }
+
+  &__section-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  &__section-item {
+    font-size: 14px;
+    width: 120px;
+  }
+}
+
+.list {
+  &__item {
+    margin-left: 4px;
+  }
+}
+
+.logo {
+  &__link {
+    height: 36px;
+    width: 36px;
+  }
+
+  &__half-padding {
+    padding: 6px;
+  }
+}
+
+.scroll {
+  &__auto {
+    overflow: auto;
+  }
+}

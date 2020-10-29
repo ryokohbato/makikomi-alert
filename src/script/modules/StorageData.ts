@@ -19,7 +19,6 @@ export const setData = function(data: Array<{key: string, value: string}>): void
 {
   data.forEach(x =>
     {
-      console.log(`set, key ${x.key}, value: ${x.value}`);
       browser.storage.local.set({[x.key]: x.value})
         .catch(err =>
           {

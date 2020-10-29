@@ -29,7 +29,6 @@ export const popupColorConfig = function(): void
         .then((response) =>
         {
           const targetData: HTMLInputElement = document.querySelector(`[data-tag="${targetTag}"]`);
-          console.log(targetData, response[targetTag__default]);
           targetData.value = response[targetTag__default];
 
           setData([{

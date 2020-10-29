@@ -12,7 +12,7 @@ export const toggleAlert = function(isOpen: boolean): void
 
     if (replyButton__container)
     {
-      if (document.querySelector(`${replyButton__container__query} ._makikomi_alert`))
+      if (document.querySelector(`${replyButton__container__query} ._makikomi-alert__icon`))
       {
         sendInfoToBackground({
           text: `skip - alert message already exists.`,

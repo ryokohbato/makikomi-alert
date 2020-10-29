@@ -12,10 +12,22 @@ export const toggleAlert = function(isOpen: boolean): void
 
     if (replyButton__container)
     {
-      if (document.querySelector(`${replyButton__container__query} ._makikomi_alert`) || !testAlertMessageElement())
+      if (document.querySelector(`${replyButton__container__query} ._makikomi_alert`))
       {
         sendInfoToBackground({
-          text: `skip toggle`,
+          text: `skip - alert message already exists.`,
+          from: 'contents',
+          to: 'background',
+          time: Date.now(),
+          type: 'log',
+        })
+        return;
+      }
+
+      if (!testAlertMessageElement())
+      {
+        sendInfoToBackground({
+          text: `skip - this is not a reply for others.`,
           from: 'contents',
           to: 'background',
           time: Date.now(),

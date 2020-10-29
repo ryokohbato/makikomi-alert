@@ -2,15 +2,6 @@ import { getData } from "./StorageData"
 
 export const setContentsStyle = function(): void
 {
-  // sendInfoToBackground({
-  //   text: {
-  //     method: "get",
-  //     key: [
-  //       ""
-  //     ]
-  //   }
-  // })
-
   getData([
     "checkmark-color",
     "alertmark-color",

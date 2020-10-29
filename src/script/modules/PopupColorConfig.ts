@@ -8,19 +8,6 @@ export const popupColorConfig = function(): void
     {
       x.addEventListener('change', () =>
       {
-        // sendInfoToBackground({
-        //   text: {method: "set", values: [
-        //     {
-        //       "key": x.getAttribute('data-tag'),
-        //       "value": x.value,
-        //     }
-        //   ]},
-        //   from: "popup",
-        //   to: "background",
-        //   type: "storage",
-        //   time: Date.now(),
-        // })
-
         setData([{
           "key": x.getAttribute('data-tag'),
           "value": x.value,
@@ -44,19 +31,6 @@ export const popupColorConfig = function(): void
           const targetData: HTMLInputElement = document.querySelector(`[data-tag="${targetTag}"]`);
           console.log(targetData, response[targetTag__default]);
           targetData.value = response[targetTag__default];
-
-          // sendInfoToBackground({
-          //   text: {method: "set", values: [
-          //     {
-          //       "key": targetTag,
-          //       "value": response[targetTag__default],
-          //     }
-          //   ]},
-          //   from: "popup",
-          //   to: "background",
-          //   type: "storage",
-          //   time: Date.now(),
-          // })
 
           setData([{
             "key": targetTag,

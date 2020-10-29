@@ -22,13 +22,6 @@ handleInfo((message) =>
         })
       break;
     
-    // case "storage":
-    //   if (message.text.method === "set")
-    //     setData(message.text.values);
-    //   else if (message.text.method === "get")
-    //     getData(message.text.key);
-    //   break;
-  
     default:
       break;
   }

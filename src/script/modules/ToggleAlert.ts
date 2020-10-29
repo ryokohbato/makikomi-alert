@@ -1,6 +1,5 @@
 import { alertMessageElement, testAlertMessageElement } from './AlertMessageElement';
 import { sendInfoToBackground } from './SendInfoToBackground';
-import { htmlSpecialchars } from "./HtmlSpecialchars";
 
 export const toggleAlert = function(isOpen: boolean): void
 {

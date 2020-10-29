@@ -17,8 +17,13 @@ export const popupLog = function(): void
     {
       if (x.type === 'log')
       {
-        document.getElementById('console').insertAdjacentHTML("afterbegin" ,
-        `<p>text: ${x.text}, from: ${x.from}, to: ${x.to}, time: ${x.time}</p>`)
+        document.querySelector('.log__table--body').insertAdjacentHTML("afterbegin" ,
+          `<tr>
+            <td>${x.text}</td>
+            <td>${x.time}</td>
+            <td>${x.from}</td>
+            <td>${x.to}</td>
+          </tr>`);
       }
     })
   })

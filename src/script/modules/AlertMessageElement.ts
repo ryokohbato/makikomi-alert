@@ -57,6 +57,14 @@ export const alertMessageElement = function(): string
   if (countAllIndex(replyMember, '\@') >= 2)
   {
     document.querySelector(replyBox).classList.add('_makikomi-alert__alert-box');
+      
+    sendInfoToBackground({
+      text: `alert icon was added.`,
+      from: 'contents',
+      to: 'background',
+      time: Date.now(),
+      type: 'log',
+    });
     
     return `<svg class="_makikomi-alert__icon _makikomi-alert__alert" 
       version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
@@ -64,6 +72,14 @@ export const alertMessageElement = function(): string
   }
 
   document.querySelector('.r-1d2f490.r-u8s1d.r-zchlnj.r-ipm5af.r-184en5c').classList.remove('_makikomi-alert__alert-box');
+
+  sendInfoToBackground({
+    text: `check icon was added.`,
+    from: 'contents',
+    to: 'background',
+    time: Date.now(),
+    type: 'log',
+  });
 
   return `<svg class="_makikomi-alert__icon _makikomi-alert__check"
     version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">

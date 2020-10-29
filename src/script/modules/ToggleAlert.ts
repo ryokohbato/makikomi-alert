@@ -39,14 +39,6 @@ export const toggleAlert = function(isOpen: boolean): void
       const alertElement = alertMessageElement();
       replyButton__container.insertAdjacentHTML('beforeend',
         `<div class="_makikomi-alert">${alertElement}</div>`);
-
-      sendInfoToBackground({
-        text: `alert was added.`,
-        from: 'contents',
-        to: 'background',
-        time: Date.now(),
-        type: 'log',
-      });
     }
     else
     {

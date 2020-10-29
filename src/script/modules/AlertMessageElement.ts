@@ -74,7 +74,7 @@ export const testAlertMessageElement = function (): boolean
 {
   const result = Boolean(document.querySelector(replyMember__query));
   sendInfoToBackground({
-    text: `test result: ${result}`,
+    text: `is reply: ${result}`,
     from: 'contents',
     to: 'background',
     time: Date.now(),

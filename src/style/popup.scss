@@ -185,6 +185,54 @@
   }
 }
 
+.log {
+  &__table {
+    table-layout: fixed;
+    width: 500px;
+
+    &--head {
+      background-color: rgba($color-highlight-pair, $alpha: 0.2);
+      border-bottom: 1px solid rgba($color-highlight, $alpha: 0.6);
+      font-size: 14px;
+
+      th {
+        padding: 2px 5px;
+
+        &:nth-child(1) {
+          width: 35px;
+        }
+
+        &:nth-child(2) {
+          width: 25px;
+        }
+
+        &:nth-child(3) {
+          width: 20px;
+        }
+
+        &:nth-child(4) {
+          width: 20px;
+        }
+      }
+    }
+
+    &--body {
+      font-size: 13px;
+
+      tr {
+        td {
+          overflow: hidden;
+          padding: 2px 5px;
+        }
+
+        &:nth-of-type(2n) {
+          background-color: rgba($color-highlight-pair, $alpha: 0.1);
+        }
+      }
+    }
+  }
+}
+
 .scroll {
   &__auto {
     overflow: auto;

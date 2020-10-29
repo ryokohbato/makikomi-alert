@@ -30,7 +30,8 @@ export const toggleAlert = function(isOpen: boolean): void
         `<div class="_makikomi-alert">${alertElement}</div>`);
 
       sendInfoToBackground({
-        text: `${htmlSpecialchars(alertElement)} was added.`,
+        //text: `${htmlSpecialchars(alertElement)} was added.`,
+        text: `alert was added.`,
         from: 'contents',
         to: 'background',
         time: Date.now(),

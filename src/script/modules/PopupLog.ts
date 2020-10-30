@@ -1,9 +1,9 @@
 import { handleInfoList } from './HandleInfo';
-import { sendInfoToBackground } from './SendInfoToBackground';
+import { sendInfoToBackside } from './SendInfoToBackside';
 
 export const popupLog = function(): void
 {
-  sendInfoToBackground({
+  sendInfoToBackside({
     text: 'Popup was opened!',
     from: 'popup',
     to: 'background',

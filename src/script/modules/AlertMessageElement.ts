@@ -1,4 +1,4 @@
-import { sendInfoToBackground } from './SendInfoToBackground';
+import { sendInfoToBackside } from './SendInfoToBackside';
 
 const replyMember__query
   = `.css-1dbjc4n.r-1wbh5a2.r-rsyp9y.r-1pjcn9w.r-htvplk.r-1udh08x.r-1potc6q
@@ -58,7 +58,7 @@ export const alertMessageElement = function(): string
   {
     document.querySelector(replyBox).classList.add('_makikomi-alert__alert-box');
       
-    sendInfoToBackground({
+    sendInfoToBackside({
       text: `alert icon was added.`,
       from: 'contents',
       to: 'background',
@@ -73,7 +73,7 @@ export const alertMessageElement = function(): string
 
   document.querySelector('.r-1d2f490.r-u8s1d.r-zchlnj.r-ipm5af.r-184en5c').classList.remove('_makikomi-alert__alert-box');
 
-  sendInfoToBackground({
+  sendInfoToBackside({
     text: `check icon was added.`,
     from: 'contents',
     to: 'background',
@@ -89,7 +89,7 @@ export const alertMessageElement = function(): string
 export const testAlertMessageElement = function (): boolean
 {
   const result = Boolean(document.querySelector(replyMember__query));
-  sendInfoToBackground({
+  sendInfoToBackside({
     text: `is reply: ${result}`,
     from: 'contents',
     to: 'background',

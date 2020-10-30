@@ -1,5 +1,5 @@
 import { handleInfo } from './modules/HandleInfo';
-import { sendInfoToPopup } from "./modules/SendInfoToPopup";
+import { sendInfoListToBackside } from "./modules/SendInfoListToBackside";
 import { RuntimeLog } from "./modules/RuntimeLog";
 import { setInitial } from "./modules/StorageData";
 
@@ -9,7 +9,7 @@ handleInfo((message) =>
 {
   switch (message.type) {
     case "log":
-      sendInfoToPopup(backgroundLog.Add(message))
+      sendInfoListToBackside(backgroundLog.Add(message))
         .catch(() =>
         {
           backgroundLog.Add({

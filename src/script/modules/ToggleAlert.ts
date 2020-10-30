@@ -1,5 +1,5 @@
 import { alertMessageElement, testAlertMessageElement } from './AlertMessageElement';
-import { sendInfoToBackground } from './SendInfoToBackground';
+import { sendInfoToBackside } from './SendInfoToBackside';
 
 export const toggleAlert = function(isOpen: boolean): void
 {
@@ -14,7 +14,7 @@ export const toggleAlert = function(isOpen: boolean): void
     {
       if (document.querySelector(`${replyButton__container__query} ._makikomi-alert__icon`))
       {
-        sendInfoToBackground({
+        sendInfoToBackside({
           text: `skip - alert message already exists.`,
           from: 'contents',
           to: 'background',
@@ -26,7 +26,7 @@ export const toggleAlert = function(isOpen: boolean): void
 
       if (!testAlertMessageElement())
       {
-        sendInfoToBackground({
+        sendInfoToBackside({
           text: `skip - this is not a reply for others.`,
           from: 'contents',
           to: 'background',

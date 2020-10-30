@@ -1,5 +1,5 @@
 import { toggleAlert } from './ToggleAlert';
-import { sendInfoToBackground } from "./SendInfoToBackground";
+import { sendInfoToBackside } from "./SendInfoToBackside";
 
 export const detectReply = function(): void
 {
@@ -16,7 +16,7 @@ export const detectReply = function(): void
         if (replayBoxState) return;
         toggleAlert(true);
         replayBoxState = true;
-        sendInfoToBackground({
+        sendInfoToBackside({
           text: 'reply box was opened.',
           from: 'contents',
           to: 'background',
@@ -29,7 +29,7 @@ export const detectReply = function(): void
         if (!replayBoxState) return;
         toggleAlert(false);
         replayBoxState = false;
-        sendInfoToBackground({
+        sendInfoToBackside({
           text: 'reply box was closed.',
           from: 'contents',
           to: 'background',

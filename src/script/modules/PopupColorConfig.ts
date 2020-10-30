@@ -11,7 +11,7 @@ export const popupColorConfig = function(): void
         setData([{
           "key": x.getAttribute('data-tag'),
           "value": x.value,
-        }])
+        }], "popup")
 
         colorConfigChangedNotification();
       })
@@ -34,7 +34,7 @@ export const popupColorConfig = function(): void
           setData([{
             "key": targetTag,
             "value": response[targetTag__default],
-          }])
+          }], "popup")
 
           colorConfigChangedNotification();
         })

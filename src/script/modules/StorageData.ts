@@ -16,7 +16,7 @@ export const setInitial = function(): void
   })
 }
 
-export const setData = function(data: Array<{key: string, value: string}>): void
+export const setData = function(data: Array<{key: string, value: string}>, from: "popup"|"background"): void
 {
   data.forEach(x =>
     {

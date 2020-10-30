@@ -5,6 +5,6 @@ export const sendInfoToBackside = function (message: RuntimeInformation)
 {
   const sending = browser.runtime.sendMessage(message);
   sending.catch((err) =>
-    console.log(err)
+    null
   )
 }

@@ -17,7 +17,7 @@ export const detectReply = function(): void
         toggleAlert(true);
         replayBoxState = true;
         sendInfoToBackground({
-          text: 'reply box was opened',
+          text: 'reply box was opened.',
           from: 'contents',
           to: 'background',
           time: Date.now(),
@@ -30,7 +30,7 @@ export const detectReply = function(): void
         toggleAlert(false);
         replayBoxState = false;
         sendInfoToBackground({
-          text: 'reply box was opened.',
+          text: 'reply box was closed.',
           from: 'contents',
           to: 'background',
           time: Date.now(),

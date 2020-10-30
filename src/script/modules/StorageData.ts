@@ -1,4 +1,5 @@
 import { browser } from 'webextension-polyfill-ts';
+import { sendInfoToBackside } from './SendInfoToBackside';
 
 export const setInitial = function(): void
 {
@@ -22,7 +23,13 @@ export const setData = function(data: Array<{key: string, value: string}>): void
       browser.storage.local.set({[x.key]: x.value})
         .catch(err =>
           {
-            console.log(err);
+            sendInfoToBackside({
+              text: err,
+              from: "background",
+              to: "background",
+              time: Date.now(),
+              type: "log",
+            })
           })
     })
 }

@@ -6,3 +6,7 @@ export interface RuntimeInformation
   time: number,
   type: "log",
 }
+
+export const tabsInformation = {
+  colorConfigChanged: 0,
+}

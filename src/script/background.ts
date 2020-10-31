@@ -15,7 +15,6 @@ handleInfo((message) =>
           backgroundLog.Add({
             text: 'popup not found.',
             from: 'background',
-            to: 'popup',
             time: Date.now(),
             type: 'log',
           })

@@ -6,7 +6,6 @@ export const popupLog = function(): void
   sendInfoToBackside({
     text: 'Popup was opened!',
     from: 'popup',
-    to: 'background',
     time: Date.now(),
     type: 'log',
   })
@@ -22,7 +21,6 @@ export const popupLog = function(): void
             <td>${x.text}</td>
             <td>${x.time}</td>
             <td>${x.from}</td>
-            <td>${x.to}</td>
           </tr>`);
       }
     })

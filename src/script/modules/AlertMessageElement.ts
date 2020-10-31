@@ -61,7 +61,6 @@ export const alertMessageElement = function(): string
     sendInfoToBackside({
       text: `alert icon was added.`,
       from: 'contents',
-      to: 'background',
       time: Date.now(),
       type: 'log',
     });
@@ -76,7 +75,6 @@ export const alertMessageElement = function(): string
   sendInfoToBackside({
     text: `check icon was added.`,
     from: 'contents',
-    to: 'background',
     time: Date.now(),
     type: 'log',
   });
@@ -92,7 +90,6 @@ export const testAlertMessageElement = function (): boolean
   sendInfoToBackside({
     text: `is reply: ${result}`,
     from: 'contents',
-    to: 'background',
     time: Date.now(),
     type: 'log',
   })

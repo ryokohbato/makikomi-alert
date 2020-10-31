@@ -26,7 +26,6 @@ export const setData = function(data: Array<{key: string, value: string}>, from:
             sendInfoToBackside({
               text: err,
               from: "background",
-              to: "background",
               time: Date.now(),
               type: "log",
             })

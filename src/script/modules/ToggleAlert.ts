@@ -17,7 +17,6 @@ export const toggleAlert = function(isOpen: boolean): void
         sendInfoToBackside({
           text: `skip - alert message already exists.`,
           from: 'contents',
-          to: 'background',
           time: Date.now(),
           type: 'log',
         })
@@ -29,7 +28,6 @@ export const toggleAlert = function(isOpen: boolean): void
         sendInfoToBackside({
           text: `skip - this is not a reply for others.`,
           from: 'contents',
-          to: 'background',
           time: Date.now(),
           type: 'log',
         })

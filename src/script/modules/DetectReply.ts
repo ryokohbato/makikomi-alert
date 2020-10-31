@@ -19,7 +19,6 @@ export const detectReply = function(): void
         sendInfoToBackside({
           text: 'reply box was opened.',
           from: 'contents',
-          to: 'background',
           time: Date.now(),
           type: 'log',
         })
@@ -32,7 +31,6 @@ export const detectReply = function(): void
         sendInfoToBackside({
           text: 'reply box was closed.',
           from: 'contents',
-          to: 'background',
           time: Date.now(),
           type: 'log',
         })

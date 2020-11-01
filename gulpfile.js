@@ -138,80 +138,12 @@ gulp.task("watch", () =>
 
 const copyFile = (oldPath, newPath) =>
 {
-  isExists(oldPath)
-    .then(() =>
-      resolveMkdir(path.dirname(newPath))
-    )
-    .then(() =>
-    {
-      return new Promise((resolve, reject) =>
-      {
-        fs.copyFile(oldPath, newPath, (err) =>
-        {
-          if (err)
-            reject(err);
-
-          resolve();
-        })
-      })
-    })
-    .catch((err) =>
-      console.error(err)
-    )
+  fs.copySync(oldPath, newPath);
 }
 
-const copyDir = (oldPath, newPath) =>
-{
-  isExists(oldPath)
-    .then(() =>
-    {
-      return new Promise((resolve, reject) =>
-      {
-        fs.copy(oldPath, newPath, (err) =>
-        {
-          if (err)
-            reject(err);
-
-          resolve();
-        })
-      })
-    })
-    .catch((err) =>
-      console.error(err)
-    )
-}
-
-const isExists = (path) =>
-{
-  return new Promise((resolve, reject) =>
-  {
-    fs.access(path, fs.constants.F_OK, (err) => {
-      if (err)
-        reject(err);
-
-      resolve();
-    });
-  })
-}
-
-const resolveMkdir = (dirPath) =>
-{
-  return new Promise((resolve, reject) =>
-  {
-    isExists(dirPath)
-      .catch(() =>
-      {
-        fs.mkdir(dirPath, { recursive: true }, (err) => {
-          if (err)
-            reject(err);
-
-          resolve();
-        });
-      })
-  })
-}
+const copyDir = copyFile;
 
 const rm = (path) =>
 {
-  fs.remove(path);
+  fs.removeSync(path);
 }

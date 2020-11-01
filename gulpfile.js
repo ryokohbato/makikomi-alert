@@ -124,6 +124,12 @@ gulp.task("build", gulp.series(
       copyDir("dist/", "/mnt/c/dev/makikomi-alert/dist/")
     else if (argv["mode"] === 'production')
       copyDir("product/", "/mnt/c/dev/makikomi-alert/product/")
+
+    if (argv["no-wsl"] === 'true')
+    {
+      done();
+      return;
+    }
     
     console.log("WSL -> Windows");
     done();

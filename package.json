@@ -8,7 +8,8 @@
     "build": "npx gulp build --mode=development",
     "build_script": "npx webpack -c webpack.development.config.js",
     "watch": "npx gulp watch --mode=development",
-    "publish": "npx gulp build --mode=production"
+    "publish": "npx gulp build --mode=production",
+    "publish-no-wsl": "npx gulp build --mode=production --no-wsl=true"
   },
   "repository": {
     "type": "git",

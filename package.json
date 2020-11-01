@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npx gulp checkVersion",
-    "build": "npx gulp build --mode=development;",
+    "build": "npx gulp build --mode=development",
     "build_script": "npx webpack -c webpack.development.config.js",
     "watch": "npx gulp watch --mode=development",
-    "publish": "npx gulp build --mode=production;"
+    "publish": "npx gulp build --mode=production"
   },
   "repository": {
     "type": "git",

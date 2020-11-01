@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const watch = require('gulp-watch');
 const fs = require('fs-extra');
-const path = require('path');
 
 const sass = require('gulp-sass');
 sass.compiler = require('sass');

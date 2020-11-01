@@ -245,7 +245,6 @@
   animation: ripple-effect .4s ease-in 0s 1 normal forwards;
   background-color: $color-contrast__dark;
   border-radius: 50%;
-  content: '';
   position: absolute;
   transform: translateX(-50%) translateY(-50%);
 }

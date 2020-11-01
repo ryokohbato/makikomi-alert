@@ -1,6 +1,7 @@
 import { getData } from './StorageData';
 import { toggleActive } from "./ToggleActive";
 import { popupColorConfig } from "./PopupColorConfig";
+import { rippleEffect } from './RippleEffect';
 
 export const popupUI = function(): void
 {
@@ -21,7 +22,11 @@ export const popupUI = function(): void
       })
 
     toggleActive();
-
     popupColorConfig();
+
+    document.querySelectorAll('.selector__item--section').forEach(x =>
+      {
+        rippleEffect(x);
+      })
   })
 }

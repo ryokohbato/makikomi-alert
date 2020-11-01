@@ -70,8 +70,6 @@ export const alertMessageElement = function(): string
       ${svg_code__alert}</svg>`;
   }
 
-  document.querySelector('.r-1d2f490.r-u8s1d.r-zchlnj.r-ipm5af.r-184en5c').classList.remove('_makikomi-alert__alert-box');
-
   sendInfoToBackside({
     text: `check icon was added.`,
     from: 'contents',

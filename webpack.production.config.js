@@ -1,26 +1,13 @@
 const path = require('path');
-const glob = require("glob");
+const devConfig = require('./webpack.development.config');
 
 module.exports = {
+  ...devConfig,
+
   mode: 'production',
-  entry: glob.sync('./src/script/*.ts').reduce((acc, path) => {
-        const entry = path.replace('src/script/', '').replace('.ts', '')
-        acc[entry] = path
-        return acc
-    }, {}),
   output: {
     path: path.resolve(__dirname, 'product/script'),
     filename: '[name].js'
   },
-  resolve: {
-    extensions: ['.ts', '.js']
-  },
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        loader: 'ts-loader'
-      }
-    ]
-  }
+  devtool: false,
 }

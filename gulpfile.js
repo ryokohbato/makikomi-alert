@@ -120,18 +120,18 @@ gulp.task("build", gulp.series(
     }, 200),
   (done) =>
   {
-    // WSL -> Windows
-    if (argv["mode"] === 'development')
-      copyDir("dist/", "/mnt/c/dev/makikomi-alert/dist/")
-    else if (argv["mode"] === 'production')
-      copyDir("product/", "/mnt/c/dev/makikomi-alert/product/")
-
     if (argv["no-wsl"] === 'true')
     {
       done();
       return;
     }
     
+    // WSL -> Windows
+    if (argv["mode"] === 'development')
+      copyDir("dist/", "/mnt/c/dev/makikomi-alert/dist/")
+    else if (argv["mode"] === 'production')
+      copyDir("product/", "/mnt/c/dev/makikomi-alert/product/")
+
     console.log("WSL -> Windows");
     done();
   }

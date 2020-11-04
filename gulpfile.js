@@ -103,7 +103,7 @@ gulp.task("checkVersion", (done) =>
 {
   const manifestObj = JSON.parse(fs.readFileSync('src/manifest.json'));
   const packageObj = JSON.parse(fs.readFileSync('./package.json'));
-  console.log(`manifest.json: ${manifestObj["version"]},\npackage.json: ${packageObj["version"]}`);
+  console.log(`manifest.json: ${manifestObj["version"]}\npackage.json: ${packageObj["version"]}`);
   done();
 })
 

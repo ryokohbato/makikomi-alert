@@ -4,7 +4,7 @@
   "description": "An extension for Twitter Web App that displays a warning in situations where you will send an unintended reply.",
   "main": "index.js",
   "scripts": {
-    "test": "npx gulp checkVersion",
+    "checkVersion": "npx gulp checkVersion",
     "build": "npx gulp build --mode=development",
     "build_script": "npx webpack -c webpack.development.config.js",
     "watch": "npx gulp watch --mode=development",

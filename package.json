@@ -1,6 +1,6 @@
 {
   "name": "makikomi-alert",
-  "version": "0.1.0",
+  "version": "0.3.2",
   "description": "An extension for Twitter Web App that displays a warning in situations where you will send an unintended reply.",
   "main": "index.js",
   "scripts": {

@@ -8,36 +8,43 @@ export const popupColorConfig = function(): void
     {
       x.addEventListener('change', () =>
       {
-        setData([{
-          "key": x.getAttribute('data-tag'),
-          "value": x.value,
-        }], "popup")
+        const dataTagValue = x.getAttribute('data-tag');
+        if (typeof dataTagValue === 'string')
+        {
+          setData([{
+            "key": dataTagValue,
+            "value": x.value,
+          }], "popup")
 
-        colorConfigChangedNotification();
+          colorConfigChangedNotification();
+        }
       })
     })
 
-  document.querySelectorAll('[reset-data-tag]')
-  .forEach(x =>
+  const allResetTagElement = document.querySelectorAll('[reset-data-tag]');
+  for (let i = 0; i < allResetTagElement.length; i++)
+  {
+    allResetTagElement[i].addEventListener('click', () =>
     {
-      x.addEventListener('click', () =>
-      {
-        const targetTag = x.getAttribute('reset-data-tag');
-        const targetTag__default = `${targetTag}--default`;
+      const targetTag = allResetTagElement[i].getAttribute('reset-data-tag');
+      const targetTag__default = `${targetTag}--default`;
 
-        getData([targetTag__default])
-        .then((response) =>
+      getData([targetTag__default])
+      .then((response) =>
+      {
+        const targetData: HTMLInputElement|null = document.querySelector(`[data-tag="${targetTag}"]`);
+        if (targetData !== null && targetTag !== null)
         {
-          const targetData: HTMLInputElement = document.querySelector(`[data-tag="${targetTag}"]`);
           targetData.value = response[targetTag__default];
 
           setData([{
             "key": targetTag,
             "value": response[targetTag__default],
           }], "popup")
+        }
 
-          colorConfigChangedNotification();
-        })
+        colorConfigChangedNotification();
       })
     })
+  }
 }

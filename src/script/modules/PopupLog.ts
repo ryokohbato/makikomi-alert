@@ -16,7 +16,7 @@ export const popupLog = function(): void
     {
       if (x.type === 'log')
       {
-        document.querySelector('.log__table--body').insertAdjacentHTML("afterbegin" ,
+        document.querySelector('.log__table--body')?.insertAdjacentHTML("afterbegin" ,
           `<tr>
             <td>${x.text}</td>
             <td>${x.time}</td>

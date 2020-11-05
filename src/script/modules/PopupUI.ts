@@ -13,7 +13,9 @@ export const popupUI = function(): void
         document.querySelectorAll('input.color-selector__color-preview[data-tag]')
         .forEach((x: HTMLInputElement) =>
           {
-            x.value = response[x.getAttribute('data-tag')];
+            const dataTagIndex = x.getAttribute('data-tag'); 
+            if (typeof dataTagIndex === 'string')
+              x.value = response[dataTagIndex];
           })
       })
       .catch(err =>

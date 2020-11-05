@@ -5,12 +5,12 @@ export const detectReply = function(): void
 {
   const replyBox__parent__query: string = '.r-1d2f490.r-u8s1d.r-zchlnj.r-ipm5af.r-184en5c';
 
-  let replyBox__parent = document.querySelector(replyBox__parent__query) as HTMLElement;
+  let replyBox__parent = document.querySelector(replyBox__parent__query) as HTMLElement|null;
   let replayBoxState: boolean = false;
 
   const observer = new MutationObserver(() =>
   {
-    switch (replyBox__parent.childElementCount)
+    switch (replyBox__parent?.childElementCount)
     {
       case 2:
         if (replayBoxState) return;

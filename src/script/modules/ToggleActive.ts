@@ -14,9 +14,10 @@ export const toggleActive = function(): void
       {
         if (!x.classList.contains('is-active'))
         {
-          const sameTag = document.querySelectorAll(x.getAttribute('trigger-tag'));
+          const triggerTag = x.getAttribute('trigger-tag') as string;
+          const sameTag: NodeListOf<Element>|null = document.querySelectorAll(triggerTag);
 
-          document.querySelector(`.is-active[is-trigger][trigger-tag="${x.getAttribute('trigger-tag')}"]`).classList.remove('is-active');
+          document.querySelector(`.is-active[is-trigger][trigger-tag="${x.getAttribute('trigger-tag')}"]`)?.classList.remove('is-active');
           sameTag.forEach(y =>
             {
               if (y.classList.contains('is-active'))
@@ -24,7 +25,7 @@ export const toggleActive = function(): void
             })
 
           x.classList.add('is-active');
-          document.querySelector(`[trigger-target-tag="${x.getAttribute('trigger-tag')}__${x.getAttribute('trigger-for')}"]`).classList.add('is-active');
+          document.querySelector(`[trigger-target-tag="${x.getAttribute('trigger-tag')}__${x.getAttribute('trigger-for')}"]`)?.classList.add('is-active');
         }
       })
     })

@@ -11,8 +11,8 @@ export const setContentsStyle = function(): void
   {
     const rootElement = document.querySelector('body');
 
-    rootElement.style.setProperty('--color-checkmark', `${response['checkmark-color']}`);
-    rootElement.style.setProperty('--color-alertmark', `${response['alertmark-color']}`);
-    rootElement.style.setProperty('--color-alert-border', `${response['alert-border']}`);
+    rootElement?.style.setProperty('--color-checkmark', `${response['checkmark-color']}`);
+    rootElement?.style.setProperty('--color-alertmark', `${response['alertmark-color']}`);
+    rootElement?.style.setProperty('--color-alert-border', `${response['alert-border']}`);
   })
 }

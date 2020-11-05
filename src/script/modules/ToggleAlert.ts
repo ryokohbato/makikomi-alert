@@ -35,6 +35,7 @@ export const toggleAlert = function(isOpen: boolean): void
       }
 
       const alertElement = alertMessageElement();
+      if (typeof alertElement === 'undefined') return;
       replyButton__container.insertAdjacentHTML('beforeend',
         `<div class="_makikomi-alert">${alertElement}</div>`);
     }

@@ -35,7 +35,7 @@ const replyMember__query
           289.878,367.055 512,144.945"></polygon>
       </g>`;
 
-export const alertMessageElement = function(): string
+export const alertMessageElement = function(): string|void
 {
 
   const countAllIndex = function(target: string, search: string): number
@@ -52,11 +52,13 @@ export const alertMessageElement = function(): string
     return count;
   }
 
-  let replyMember: string = document.querySelector(replyMember__query).innerHTML;
+  let replyMember = document.querySelector(replyMember__query)?.innerHTML;
+
+  if (typeof(replyMember) === 'undefined') return;
 
   if (countAllIndex(replyMember, '\@') >= 2)
   {
-    document.querySelector(replyBox).classList.add('_makikomi-alert__alert-box');
+    document.querySelector(replyBox)?.classList.add('_makikomi-alert__alert-box');
       
     sendInfoToBackside({
       text: `alert icon was added.`,

@@ -10,7 +10,8 @@ export const colorConfigChangedNotification = function(): void
   {
     allInfo.forEach((info) =>
     {
-      browser.tabs.sendMessage(info.id, tabsInformation.colorConfigChanged);
+      if (typeof info.id !== 'undefined')
+        browser.tabs.sendMessage(info.id, tabsInformation.colorConfigChanged);
     })
   })
 }

@@ -6,6 +6,10 @@
   src: url('../images/fonts/HackGen35-Regular.ttf');
 }
 
+@mixin focusEffect {
+  outline: 1px solid rgba($color-highlight, $alpha: 0.5);
+}
+
 .popup {
   background-color: $color__dark;
   border: 1px solid $color-highlight-pair;
@@ -105,6 +109,10 @@
     cursor: pointer;
     height: 32px;
     width: 51px;
+
+    &:hover, &:focus {
+      @include focusEffect();
+    }
   }
 }
 
@@ -133,6 +141,10 @@
           transition: all .5s;
         }
       }
+
+      &:focus {
+        @include focusEffect();
+      }
     }
   }
 }
@@ -144,9 +156,8 @@
     margin-left: 8px;
     padding: 4px 7px 2px;
 
-    &:hover {
-      border: 1px solid rgba($color-highlight, $alpha: 0.6);
-      transition: all .3s;
+    &:hover, &:focus {
+      @include focusEffect();
     }
   }
 }
@@ -173,6 +184,10 @@
 .list {
   &__item {
     margin-left: 4px;
+
+    &:focus {
+      @include focusEffect();
+    }
   }
 }
 

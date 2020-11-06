@@ -11,13 +11,15 @@
     <div class="container__title--extension-title container__wide container__center-aligned">
       <h1 class="title__extension-title">Makikomi Alert</h1>
     </div>
-    <div class="container__flex container__center-aligned--flex">
-      <div class="selector__item--section container__center-aligned is-active" is-trigger trigger-for="color-selector" trigger-tag="section">
+    <div class="container__flex container__center-aligned--flex" role="tabgroup">
+      <div class="selector__item--section container__center-aligned is-active" is-trigger trigger-for="color-selector" trigger-tag="section"
+        tabindex="0" aria-selected="true" role="tab" aria-setsize="2" aria-posinset="1">
         <p>
           色の設定
         </p>
       </div>
-      <div class="selector__item--section container__center-aligned" is-trigger trigger-for="log" trigger-tag="section">
+      <div class="selector__item--section container__center-aligned" is-trigger trigger-for="log" trigger-tag="section"
+        tabindex="0" aria-selected="false" role="tab" aria-setsize="2" aria-posinset="2">
         <p>
           ログ
         </p>
@@ -25,33 +27,33 @@
     </div>
   </header>
   <main class="indent__top l-gird-main scroll__auto">
-    <section trigger-target-tag="section__color-selector" class="section-item is-active">
+    <section trigger-target-tag="section__color-selector" class="section-item is-active" aria-hidden="false">
       <h2 class="title__section-title">色の設定</h2>
       <ul>
         <li class="container__color-selector">
           <div class="color-selector container__flex container__vertical-center-aligned--flex">
-            <h2 class="title__section-item">チェックマーク</h2>
-            <input type="color" class="color-selector__color-preview" data-tag="checkmark-color">
+            <label class="title__section-item" for="checkmark-color">チェックマーク</label>
+            <input type="color" id="checkmark-color" class="color-selector__color-preview" data-tag="checkmark-color">
             <button class="button__flat list__item" reset-data-tag="checkmark-color">リセット</button>
           </div>
         </li>
         <li class="container__color-selector">
           <div class="color-selector container__flex container__vertical-center-aligned--flex">
-            <h2 class="title__section-item">注意アイコン</h2>
-            <input type="color" class="color-selector__color-preview" data-tag="alertmark-color">
+            <label class="title__section-item" for="alertmark-color">注意アイコン</label>
+            <input type="color" id="alertmark-color" class="color-selector__color-preview" data-tag="alertmark-color">
             <button class="button__flat list__item" reset-data-tag="alertmark-color">リセット</button>
           </div>
         </li>
         <li class="container__color-selector">
           <div class="color-selector container__flex container__vertical-center-aligned--flex">
-            <h2 class="title__section-item">注意時の枠色</h2> 
-            <input type="color" class="color-selector__color-preview" data-tag="alert-border">
+            <label class="title__section-item" for="alert-border">注意時の枠色</label> 
+            <input type="color" id="alert-border" class="color-selector__color-preview" data-tag="alert-border">
             <button class="button__flat list__item" reset-data-tag="alert-border">リセット</button>
           </div>
         </li>
       </ul>
     </section>
-    <section trigger-target-tag="section__log" class="section-item">
+    <section trigger-target-tag="section__log" class="section-item" aria-hidden="true">
       <h2 class="title__section-title">ログ</h2>
       <table class="log__table">
         <thead class="log__table--head">

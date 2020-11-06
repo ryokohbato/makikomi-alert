@@ -183,7 +183,7 @@
 
 .list {
   &__item {
-    margin-left: 4px;
+    margin-left: 8px;
 
     &:focus {
       @include focusEffect();

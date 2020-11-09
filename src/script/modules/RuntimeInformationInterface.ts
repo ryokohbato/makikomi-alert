@@ -1,4 +1,4 @@
-export interface RuntimeInformation
+export interface IRuntimeInformation
 {
   text: string,
   from: "popup"|"background"|"contents",
@@ -6,6 +6,6 @@ export interface RuntimeInformation
   type: "log",
 }
 
-export const tabsInformation = {
+export const ITabsInformation = {
   colorConfigChanged: 0,
 }

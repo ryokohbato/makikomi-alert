@@ -1,5 +1,5 @@
 import { browser } from "webextension-polyfill-ts"
-import { tabsInformation } from "./RuntimeInformationInterface";
+import { ITabsInformation } from "./RuntimeInformationInterface";
 
 export const colorConfigChangedNotification = function(): void
 {
@@ -11,7 +11,7 @@ export const colorConfigChangedNotification = function(): void
     allInfo.forEach((info) =>
     {
       if (typeof info.id !== 'undefined')
-        browser.tabs.sendMessage(info.id, tabsInformation.colorConfigChanged);
+        browser.tabs.sendMessage(info.id, ITabsInformation.colorConfigChanged);
     })
   })
 }

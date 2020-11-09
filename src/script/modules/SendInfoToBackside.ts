@@ -1,7 +1,7 @@
 import { browser } from 'webextension-polyfill-ts';
-import { RuntimeInformation } from './RuntimeInformationInterface';
+import { IRuntimeInformation } from './RuntimeInformationInterface';
 
-export const sendInfoToBackside = function (message: RuntimeInformation)
+export const sendInfoToBackside = function (message: IRuntimeInformation)
 {
   const sending = browser.runtime.sendMessage(message);
   sending.catch((err) =>

@@ -1,17 +1,17 @@
 import { browser } from 'webextension-polyfill-ts';
-import { RuntimeInformation } from './RuntimeInformationInterface';
+import { IRuntimeInformation } from './RuntimeInformationInterface';
 
-export const handleInfo = function(handle: (message: RuntimeInformation) => void): void
+export const handleInfo = function(handle: (message: IRuntimeInformation) => void): void
 {
-  browser.runtime.onMessage.addListener(async function(message: RuntimeInformation, sender)
+  browser.runtime.onMessage.addListener(async function(message: IRuntimeInformation, sender)
   {
     handle(message);
   });
 }
 
-export const handleInfoList = function(handle: (message: Array<RuntimeInformation>) => void): void
+export const handleInfoList = function(handle: (message: Array<IRuntimeInformation>) => void): void
 {
-  browser.runtime.onMessage.addListener(async function(message: Array<RuntimeInformation>, sender)
+  browser.runtime.onMessage.addListener(async function(message: Array<IRuntimeInformation>, sender)
   {
     handle(message);
   });

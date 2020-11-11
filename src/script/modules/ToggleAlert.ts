@@ -1,12 +1,11 @@
 import { alertMessageElement, testAlertMessageElement } from './AlertMessageElement';
+import { replyBox__query, replyButton__container__query } from './HtmlQueries';
 import { sendInfoToBackside } from './SendInfoToBackside';
 
 export const toggleAlert = function(isOpen: boolean): void
 {
   const addAlert = function(): void
   {
-    const replyButton__container__query
-      = '.css-1dbjc4n.r-1wbh5a2.r-rsyp9y.r-1pjcn9w.r-htvplk.r-1udh08x.r-1potc6q .css-1dbjc4n.r-1awozwy.r-18u37iz:nth-child(2)';
 
     let replyButton__container = document.querySelector(replyButton__container__query) as HTMLElement;
 

@@ -1,9 +1,9 @@
 import { clearAlert, toggleAlert } from './ToggleAlert';
 import { sendInfoToBackside } from "./SendInfoToBackside";
+import { replyBox__parent__query, replyBox__query } from './HtmlQueries';
 
 export const detectReply = function(): void
 {
-  const replyBox__parent__query: string = '.r-1d2f490.r-u8s1d.r-zchlnj.r-ipm5af.r-184en5c';
 
   let replyBox__parent = document.querySelector(replyBox__parent__query) as HTMLElement|null;
   let replayBoxState: boolean = false;

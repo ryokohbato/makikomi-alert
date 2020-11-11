@@ -43,7 +43,6 @@ const toggleActive__exec = (x: Element): void =>
 
     x.classList.add('is-active');
     x.setAttribute('aria-selected', 'true');
-    console.log(x)
     document.querySelector(`[trigger-target-tag="${x.getAttribute('trigger-tag')}__${x.getAttribute('trigger-for')}"]`)?.setAttribute('aria-hidden', 'false');
     document.querySelector(`[trigger-target-tag="${x.getAttribute('trigger-tag')}__${x.getAttribute('trigger-for')}"]`)?.classList.add('is-active');
   }

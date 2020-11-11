@@ -54,3 +54,8 @@ export const toggleAlert = function(isOpen: boolean): void
     addAlert();
   }
 }
+
+export const clearAlert = function(): void
+{
+  document.querySelector(replyBox__query)?.classList.remove('_makikomi-alert__alert-box');
+}

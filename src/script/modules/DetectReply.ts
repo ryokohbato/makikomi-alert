@@ -1,4 +1,4 @@
-import { toggleAlert } from './ToggleAlert';
+import { clearAlert, toggleAlert } from './ToggleAlert';
 import { sendInfoToBackside } from "./SendInfoToBackside";
 
 export const detectReply = function(): void
@@ -8,20 +8,61 @@ export const detectReply = function(): void
   let replyBox__parent = document.querySelector(replyBox__parent__query) as HTMLElement|null;
   let replayBoxState: boolean = false;
 
-  const observer = new MutationObserver(() =>
+  const hook = document.createElement('div');
+  hook.classList.add('css-1dbjc4n');
+  hook.classList.add('r-12vffkv');
+
+  const observer = new MutationObserver((records) =>
   {
-    switch (replyBox__parent?.childElementCount)
+    records.forEach(x =>
     {
-      case 2:
-        if (replayBoxState) return;
-        toggleAlert(true);
-        replayBoxState = true;
+      if (x.target.isEqualNode(hook))
+      {
         sendInfoToBackside({
-          text: 'reply box was opened.',
+          text: 'restart observer.',
           from: 'contents',
           time: Date.now(),
           type: 'log',
         })
+        startObservation();
+      }
+    })
+
+    switch (replyBox__parent?.childElementCount)
+    {
+      case 2:
+        switch ((document.querySelector(replyBox__query)?.firstChild as HTMLElement)?.childElementCount)
+        {
+          // The screen to select the user to send a reply to
+          case 2:
+            if (!replayBoxState) return;
+            clearAlert();
+            startObservation();
+            replayBoxState = false;
+            sendInfoToBackside({
+              text: 'window opened to change reply-to.',
+              from: 'contents',
+              time: Date.now(),
+              type: 'log',
+            })
+            break;
+
+          // The screen to make a reply.
+          case 3:
+            if (replayBoxState) return;
+            toggleAlert(true);
+            replayBoxState = true;
+            sendInfoToBackside({
+              text: 'reply box was opened.',
+              from: 'contents',
+              time: Date.now(),
+              type: 'log',
+            })
+            break;
+
+          default:
+            break;
+        }
         break;
 
       default:

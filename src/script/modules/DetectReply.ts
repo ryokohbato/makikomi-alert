@@ -82,6 +82,7 @@ export const detectReply = function(): void
 
   const startObservation = function(): void
   {
+    replyBox__parent = document.querySelector(replyBox__parent__query);
     if (replyBox__parent)
     {
       observer.observe(replyBox__parent, {subtree: true, childList: true});
@@ -89,7 +90,6 @@ export const detectReply = function(): void
     else
     {
       setTimeout(() => {
-        replyBox__parent = document.querySelector(replyBox__parent__query);
         startObservation();
       }, 100);
     }

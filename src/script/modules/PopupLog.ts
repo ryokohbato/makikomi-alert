@@ -14,15 +14,25 @@ export const popupLog = function(): void
   {
     message.forEach(x =>
     {
-      if (x.type === 'log')
+      switch(x.type)
       {
-        document.querySelector('.log__table--body')?.insertAdjacentHTML("afterbegin" ,
-          `<tr>
-            <td>${x.text}</td>
-            <td>${x.time}</td>
-            <td>${x.from}</td>
-          </tr>`);
+        case "log":
+          document.querySelector('.log__table--body')?.insertAdjacentHTML("afterbegin" ,
+            `<tr>
+              <td>${x.text}</td>
+              <td>${x.time}</td>
+              <td>${x.from}</td>
+            </tr>`);
+        break;
+
+        case "logCount":
+          document.querySelector(`.log__log-count`)?.insertAdjacentHTML('afterbegin', `${x.text}`);
+          break;
       }
     })
+  })
+
+  sendInfoToBackside({
+    type: "logCount",
   })
 }
